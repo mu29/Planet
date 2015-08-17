@@ -13,13 +13,13 @@ std::string Response::GetRoute() {
 bool Response::IsMatch(Request& req) {
     if (req.GetMethod() != method_)
         return false;
-    
+
     std::string route = "";
     int routeSize = 0;
-    
+
     std::vector<std::string> params;
     std::vector<std::string> resRoute = split(route_, '/');
-    
+
     for (std::string s : resRoute) {
         if (s.at(0) == ':') {
             params.push_back(s.erase(0, 1));
@@ -28,16 +28,16 @@ bool Response::IsMatch(Request& req) {
             route += s + "/";
         }
     }
-    
+
     std::vector<string> reqRoute = split(req.GetRoute(), '/');
-    
+
     if (resRoute.size() != reqRoute.size())
         return false;
-    
+
     for (int i = 0; i < routeSize; i++)
         if (resRoute[i] != reqRoute[i])
             return false;
-    
+
     for (int i = routeSize; i < reqRoute.size(); i++) {
         Json::Object& reqParams = req.GetParameter();
         std::string paramKey = params[i - routeSize];

@@ -2,7 +2,7 @@
 #define __planet__response__
 
 #include "../lib/json/lightjson.h"
-#include "../lib/split.h"
+#include "../lib/string/split.h"
 
 #include <vector>
 #include <string>
