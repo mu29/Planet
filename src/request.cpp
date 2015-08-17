@@ -1,24 +1,24 @@
 #include "request.h"
 
-Request::Request(string route, string method, Json::Object parameter, Json::Object body) {
+Request::Request(std::string route, std::string method, Json::Object parameter, Json::Object body) {
     route_ = route;
     method_ = method;
     parameter_ = parameter;
     body_ = body;
 }
 
-string Request::getRoute() {
+string Request::GetRoute() {
     return route_;
 }
 
-string Request::getMethod() {
+string Request::GetMethod() {
     return method_;
 }
 
-Json::Object& Request::getParameter() {
+Json::Object& Request::GetParameter() {
     return parameter_;
 }
 
-Json::Object Request::getBody() {
+Json::Object Request::GetBody() {
     return body_;
 }
