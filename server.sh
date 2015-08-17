@@ -1,2 +1,3 @@
-cd src && make && rm *.o
-
+service lighttpd stop
+make
+service lighttpd start
