@@ -17,7 +17,7 @@ Request UrlDispatcher::GetRequest() {
     Json::Reader reader;
     
     if (method == "GET") {
-        std::vector<std::string> params = split(getenv("QUERY_STRING"), '&');
+        std::vector<std::string> params = split(std::getenv("QUERY_STRING"), '&');
         
         for (std::string i : params) {
             std::vector<std::string> keyValue = split(i, '=');
