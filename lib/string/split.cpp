@@ -11,6 +11,7 @@ std::vector<std::string> split(std::string source, char delimeter) {
             piece = "";
         }
     }
+    result.push_back(piece);
 
     return result;
 }
