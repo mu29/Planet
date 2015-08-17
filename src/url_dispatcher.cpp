@@ -3,7 +3,10 @@
 UrlDispatcher::UrlDispatcher() { }
 
 UrlDispatcher* UrlDispatcher::GetInstance() {
-    return &instance_;
+    if (instance_ == NULL)
+        instance_ = new UrlDispatcher();
+
+    return instance_;
 }
 
 Request UrlDispatcher::GetRequest() {
@@ -31,4 +34,6 @@ Request UrlDispatcher::GetRequest() {
     Request req(route, method, parameter, body);
     return req;
 }
+
+UrlDispatcher* UrlDispatcher::instance_ = NULL;
 

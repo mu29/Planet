@@ -8,7 +8,7 @@
 class Router {
 private:
     std::vector<Response> responseList_;
-    static Router instance_;
+    static Router* instance_;
     Router();
 public:
     void Handle(Request& req);

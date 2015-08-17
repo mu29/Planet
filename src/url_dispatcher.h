@@ -9,7 +9,7 @@
 
 class UrlDispatcher {
 private:
-    static UrlDispatcher instance_;
+    static UrlDispatcher* instance_;
     UrlDispatcher();
     
 public:

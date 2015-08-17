@@ -18,5 +18,11 @@ void Router::AddResponse(Response res) {
 }
 
 Router* Router::GetInstance() {
-    return &instance_;
+    if (instance_ == NULL)
+        instance_ = new Router();
+
+    return instance_;
 }
+
+Router* Router::instance_ = NULL;
+
