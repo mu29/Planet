@@ -22,7 +22,7 @@ bool Response::IsMatch(Request& req) {
 
     for (std::string s : resRoute) {
         if (s[0] == ':') {
-            params.push_back(s);
+            params.push_back(s.erase(0, 1));
         } else {
             routeSize++;
             route += s + "/";
