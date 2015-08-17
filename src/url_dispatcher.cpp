@@ -12,6 +12,16 @@ Request UrlDispatcher::GetRequest() {
     Json::Object parameter;
     Json::Object body;
     Json::Reader reader;
+    
+    if (method == "GET") {
+        std::vector<std::string> params = split(getenv("QUERY_STRING"), '&');
+        
+        for (std::string i : params) {
+            std::vector<std::string> keyValue = split(i, '=');
+            if (keyValue.size() == 2)
+                parameter[keyValue[0]] = keyValue[1];
+        }
+    }
 
     char buf[2048];
     memset(buf, 0, 2048);
