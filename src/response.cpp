@@ -21,8 +21,8 @@ bool Response::IsMatch(Request& req) {
     std::vector<std::string> resRoute = split(route_, '/');
 
     for (std::string s : resRoute) {
-        if (s.at(0) == ':') {
-            params.push_back(s.erase(0, 1));
+        if (s[0] == ':') {
+            params.push_back(s);
         } else {
             routeSize++;
             route += s + "/";
