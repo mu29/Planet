@@ -4,8 +4,8 @@
 #include "../lib/string/split.h"
 
 #include <string.h>
-#include "fcgi_stdio.h"
 #include "request.h"
+#include "fcgi_stdio.h"
 
 class UrlDispatcher {
 private:
